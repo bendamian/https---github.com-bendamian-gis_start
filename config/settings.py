@@ -30,12 +30,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.gis',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_gis',
+    "corsheaders",
+    'djoser',
     'backend',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -72,7 +78,7 @@ DATABASES = {
         
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': os.environ.get('NAME'),
-        'USER':os.getenv('USER_ID'),
+        'USER': os.getenv('USER_ID'),
         'PASSWORD': os.environ.get('PASSWORD'),
         'HOST': os.environ.get('HOST')
     }
@@ -119,3 +125,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+  
+    "http://localhost:5001",
+    "http://127.0.0.1:5001",
+]

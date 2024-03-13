@@ -1,17 +1,28 @@
 from django.contrib.gis import admin
+from .models import Category,Sight
 
 # Register your models here.
 
-from .models import Marker,Place
+admin.site.register(Category)
 
-# Register your models here.
 
-@admin.register(Marker)
+
+class CustomGeoAdmin(admin.GISModelAdmin):
+    gis_widget_kwargs = {
+        'attrs': {
+            'default_zoom': 4,
+            'default_longitude': 51.509865,
+            'default_latitude': -0.118092
+        }
+
+    }
+
+
+@admin.register(Sight)
 class MarkerAdmin(admin.GISModelAdmin):
-    list_display = ("name", "location")
+    list_display = ("name", "city",'published')
 
 
-@admin.register(Place)
-class MarkerAdmin(admin.GISModelAdmin):
-    list_display = ("name", "location")
+
+
 
