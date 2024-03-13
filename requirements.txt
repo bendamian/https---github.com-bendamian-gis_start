@@ -1,4 +1,5 @@
 Django
+psycopg
 python-dotenv
 djangorestframework
 djangorestframework-gis
