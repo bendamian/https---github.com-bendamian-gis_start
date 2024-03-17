@@ -7,4 +7,5 @@ urlpatterns = [
      path('backend/', include('backend.urls')),
       path('backend/', include('djoser.urls')),
        path('backend/', include('djoser.urls.authtoken')),
+       path('accounts/',include('django.contrib.auth.urls'))
 ]
