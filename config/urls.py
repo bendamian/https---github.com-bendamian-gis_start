@@ -7,7 +7,8 @@ from frontend.views import (home_view)
 urlpatterns = [
     path('admin/', admin.site.urls),
      path('backend/', include('backend.urls')),
-     path('',home_view,name='home')
+     path('frontend/', include('frontend.urls')),
+     path('',home_view,name='home'),
      #path('', include('frontend.urls')),
 
 

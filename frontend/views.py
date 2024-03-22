@@ -4,13 +4,17 @@ from django.template import loader
 # Create your views here.
 def home_view(request,*args,**kwargs):
     context={}
-    return render(request,'./registrations/home.html',context) 
+    return render(request,'./registrations/index.html',context) 
 
 def register(request):
-    pass
+    context={}
+    return render(request,'./registrations/register.html',context) 
+    
 
 def my_login(request):
-    pass
+    context={}
+    return render(request,'./registrations/login.html',context) 
 
 def dashbord(request):
-    pass
+    context={}
+    return render(request,'./registrations/dashbord.html',context) 
