@@ -2,20 +2,15 @@ from django.urls import path
 from . import views
 
 
-app_name = 'sight-api'
+app_name = 'frontend'
 
 urlpatterns = [
-    path('home/', views.home_view, name= ''),
+    path('', views.home_view, name='home'),
+    path('login/', views.my_login, name="login"),
+    path('dashbord/', views.dashbord, name="dashbord"),
 
-    path('register/', views.register, name="register"),
-
-    path('my-login/', views.my_login, name="my-login"),
-
-    path('dashboard/', views.dashbord, name="dashboard"),
-
-   
-
-
+    
+    path('reg/', views.register, name="register"),
+    #path('', views.register, name="register"),
 ]
-
 

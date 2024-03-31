@@ -2,14 +2,15 @@ from django.contrib import admin
 from . import settings
 from django.conf.urls.static import static
 from django.urls import path,include
-from frontend.views import (home_view)
+from frontend.views import (home_view,logout_user)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
      path('backend/', include('backend.urls')),
-     path('frontend/', include('frontend.urls')),
-     path('',home_view,name='home'),
      #path('', include('frontend.urls')),
+     path('',home_view,name='home'),
+     path('',logout_user,name='logout'),
+     path('', include('frontend.urls')),
 
 
      

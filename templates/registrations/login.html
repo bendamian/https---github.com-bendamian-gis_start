@@ -3,4 +3,19 @@
 {%block title%} Login {%endblock title%}
 
 
-{%block content %}  <div>Login</div>  {%endblock content%}
+{%block content %}  <div><h1>Login</h1></div>
+
+<form method="POST" autocomplete="off">
+
+    {% csrf_token %}
+
+    {{loginform.as_p}}
+
+    <input type="submit" value="Login"/>
+
+
+</form>
+
+
+
+{%endblock content%}
